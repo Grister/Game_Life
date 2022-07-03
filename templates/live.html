@@ -3,7 +3,7 @@
 {% block app_content %}
     <a class="btn btn-warning home" href="{{ url_for('index') }}">На главную</a>
     <a class="btn btn-info refresh" href="{{ url_for('live') }}">Создать новую жизнь</a>
-
+    <div class="counter" id="id_counter">{{ game.counter }}</div>
     <table class="world">
         {% for i in game.world %}
             <tr>
@@ -19,10 +19,10 @@
     </table>
 {% endblock %}
 
+
 {% block scripts %}
     {{ super() }}
     <script>
         setInterval(() => window.location.reload(), 1000);
     </script>
-    <div class="counter">{{ game.counter }}</div>
 {% endblock %}
